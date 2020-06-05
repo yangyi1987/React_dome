@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './assets/css/index.css';
+import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 
+// 入口文件
 ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
+  // 挂载到root节点下
   document.getElementById('root')
 );
 

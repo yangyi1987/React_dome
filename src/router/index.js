@@ -1,6 +1,6 @@
 import { Router, Route, hashHistory } from 'react-router';
 import index from '../components/index'
-import app from '../App'
+import app from '../components/App'
 
 render((
     <Router history={hashHistory}>
