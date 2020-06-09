@@ -26,6 +26,7 @@ class login extends React.Component {
     e.preventDefault();
     console.log(this.state.account)
     console.log(this.state.password)
+    console.log(this.state.userType)
   }
   handName = (e) =>{
     this.setState({
@@ -35,6 +36,21 @@ class login extends React.Component {
   handPassword=(e)=>{
     this.setState({
       password: e.target.value
+    })
+  }
+  HandCheckbox(key){
+    var userType
+    const ChangType = this.state.type
+    ChangType[key].checkbox = !ChangType[key].checkbox
+    // console.log(ChangType[key].checkbox)
+    if(ChangType[key].checkbox){
+      userType = this.state.type[key].userType
+    } else{
+      userType = null
+    }
+    this.setState({
+      userType: userType,
+      type: ChangType
     })
   }
   render(){
@@ -50,7 +66,7 @@ class login extends React.Component {
               this.state.type.map((value,key)=>{
                 return(
                   <span key={key}>
-                    <input type="checkbox" defaultChecked={value.checkbox} />{value.userType}
+                    <input type="checkbox" checked={value.checkbox} onChange={this.HandCheckbox.bind(this,key)} /><span>{value.userType}</span>
                   </span>
                 )
               })
