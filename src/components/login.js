@@ -22,7 +22,7 @@ class login extends React.Component {
       ]
     }
   }
-  login=(e)=>{
+  login = (e) =>{
     e.preventDefault();
     console.log(this.state.account)
     console.log(this.state.password)
@@ -33,7 +33,7 @@ class login extends React.Component {
       account: e.target.value
     })
   }
-  handPassword=(e)=>{
+  handPassword =(e)=>{
     this.setState({
       password: e.target.value
     })
